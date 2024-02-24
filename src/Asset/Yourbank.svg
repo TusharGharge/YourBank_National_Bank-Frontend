@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Shadow -->
+  <circle cx="100" cy="100" r="90" fill="#000" opacity="0.2" />
+
+  <!-- Circle -->
+  <circle cx="100" cy="100" r="80" fill="#4a90e2" />
+
+  <!-- Text -->
+  <text x="100" y="100" fill="#ffffff" font-size="60" text-anchor="middle" dominant-baseline="middle">YoB</text>
+</svg>
