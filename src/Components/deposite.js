@@ -22,7 +22,7 @@ const Deposite = (props) => {
   
       try {
         const response =axios.put(
-          'http://127.0.0.1:8000/bank/deposite', // Replace with your API endpoint
+          'https://'+process.env.REACT_APP_SERVER_URL+'/bank/deposite', // Replace with your API endpoint
           data, // Data to be sent in the request body
           {
             headers: {

@@ -28,7 +28,7 @@ const YourBank = () => {
         },
       }
 
-      await axios.get('http://127.0.0.1:8000/bank/checkaccount', config).then((res)=>{console.log(res);
+      await axios.get('https://'+process.env.REACT_APP_SERVER_URL+'/bank/checkaccount', config).then((res)=>{console.log(res);
       if (res.data.messge!=="Please create account"){
         setStatementData(res);
 

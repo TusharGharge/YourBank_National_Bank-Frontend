@@ -18,7 +18,7 @@ const StatementTable = () => {
           },
         }
 
-        const response = await axios.get('http://127.0.0.1:8000/bank/Statement', config)
+        const response = await axios.get('https://'+process.env.REACT_APP_SERVER_URL+'/bank/Statement', config)
         setStatementData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

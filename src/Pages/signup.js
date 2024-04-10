@@ -26,7 +26,9 @@ function Signup () {
     delete data['confirm-password'];
     console.log(data);
 
-    const response =axios.post('http://127.0.0.1:8000/user/',data).then(res=>{console.log(res);setCount(0);navigate('/signin')}).catch(error=> {console.log(error.detail);setCount(2);seterror('Credentials are already used')});
+    // const response =axios.post('http://127.0.0.1:8000/user/',data).then(res=>{console.log(res);setCount(0);navigate('/signin')}).catch(error=> {console.log(error.detail);setCount(2);seterror('Credentials are already used')});
+  
+    const response =axios.post('https://'+process.env.REACT_APP_SERVER_URL+'/user/',data).then(res=>{console.log(res);setCount(0);navigate('/signin')}).catch(error=> {console.log(error.detail);setCount(2);seterror('Credentials are already used')});
   
 
     setCount(false);

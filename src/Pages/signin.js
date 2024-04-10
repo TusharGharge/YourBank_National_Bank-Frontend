@@ -21,7 +21,7 @@ const Signin = () => {
     event.target.reset();
     console.log("submitted")
 
-    axios.post('http://127.0.0.1:8000/login/',data).then(res=>{console.log('ressssssss',res.data);sessionStorage.setItem("token",res.data.access_token);navigate('/')}).catch(error=> {console.log(error.detail);setCount(2);seterror("Invalid credentials")});
+    axios.post('https://'+process.env.REACT_APP_SERVER_URL+'/login/',data).then(res=>{console.log('ressssssss',res.data);sessionStorage.setItem("token",res.data.access_token);navigate('/')}).catch(error=> {console.log(error.detail);setCount(2);seterror("Invalid credentials")});
     console.log("submitted")
     console.log(responseData);
   }

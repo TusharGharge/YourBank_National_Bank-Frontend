@@ -23,7 +23,7 @@ const Balance = (props) => {
             },
           }
   
-          await axios.get('http://127.0.0.1:8000/bank/balance', config).then((res)=>{console.log(res.data);setStatementData(res.data)})
+          await axios.get('https://'+process.env.REACT_APP_SERVER_URL+'/bank/balance', config).then((res)=>{console.log(res.data);setStatementData(res.data)})
           
         } catch (error) {
           console.error('Error fetching data:', error);

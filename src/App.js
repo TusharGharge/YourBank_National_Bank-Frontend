@@ -10,6 +10,7 @@ import Transfer from './Pages/Transfer';
 import Statement from './Pages/statement';
 import Profile from './Pages/Profile';
 import Aboutus from './Pages/Aboutus';
+import OTPVerification from './Pages/otpverfication';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -27,6 +28,7 @@ const router=createBrowserRouter([
     {path:"Statement",element:<Statement/>},
     {path:"profile",element:<Profile/>},
     {path:"aboutus",element:<Aboutus/>},
+    {path:"otp",element:<OTPVerification/>}
 ]},]);
 
 function App() {
