@@ -34,6 +34,9 @@ const Widthdraw = (props) => {
         if (res.data.message === 'Insufficient fund' )
         {
         toast.error(res.data.message);
+        } else   if (res.data.message === 'Please enter valid amount' )
+        {
+        toast.error(res.data.message);
         } 
         else {
            toast.success(res.data.message);

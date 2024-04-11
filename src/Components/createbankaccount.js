@@ -4,11 +4,14 @@ import { useState,useRef } from "react";
 import isValidPanCardNo from './utils';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'; // Import loader styles
+
 
 
 const Createbankaccount = (props) => {
     const [paninvalid,setpannumber]=useState(false);
-    
+    const [loading, setLoading] = useState(false);
     const pannumber=useRef();
     const [error,seterror] =useState(null);
     function onhandlesubmit(event){
@@ -31,6 +34,7 @@ const Createbankaccount = (props) => {
         console.log("torkn",token);
       
         try {
+          setLoading(true);
           axios.post(
             'https://'+process.env.REACT_APP_SERVER_URL+'/bank/createaccount', // Replace with your API endpoint
             data, // Data to be sent in the request body
@@ -48,6 +52,9 @@ const Createbankaccount = (props) => {
           else if (res.data.message === "Account already exists"){
             toast.error(res.data.message);
           }
+          else if (res.data.message === "Invalid Pancard Number"){
+            toast.error(res.data.message);
+          }
           else {
              toast.success(res.data.message);
             props.callback();
@@ -57,6 +64,7 @@ const Createbankaccount = (props) => {
           
           // Handle response data as needed
         } catch (error) {
+          setLoading(false);
           console.error('Error making post request:', error);
           toast.error('failed!');
           // Handle error
@@ -72,6 +80,7 @@ const Createbankaccount = (props) => {
 
   return (
     <div>
+      {loading && <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />}
     <form onSubmit={onhandlesubmit}>
    <div className="flex justify-center items-center mt-10">
 <div className="w-full lg:w-4/5 bg-white shadow-lg rounded-lg overflow-hidden lg:h-96">
