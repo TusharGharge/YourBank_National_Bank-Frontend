@@ -7,11 +7,19 @@ import { useNavigate } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 
 import axios from 'axios';
+// import {
+//   PushSpinner, TraceSpinner, RainbowSpinner,
+//   RingSpinner, SwishSpinner, PongSpinner,
+//   MetroSpinner, JellyfishSpinner
+// }
+//   from "react-spinners-kit";
 function Signup () {
   const navigate = useNavigate();
+  // const [post,setPost]=useState(null);
   const [count, setCount] = useState(0);
   const [error,seterror] =useState(null);
   const [nextpage,setnextpage] =useState(false);
+  // const [loading, setLoading] = useState(false)
   const handlesubmit = (event)=>{
   
     event.preventDefault();
@@ -27,7 +35,12 @@ function Signup () {
     console.log(data);
 
     // const response =axios.post('http://127.0.0.1:8000/user/',data).then(res=>{console.log(res);setCount(0);navigate('/signin')}).catch(error=> {console.log(error.detail);setCount(2);seterror('Credentials are already used')});
-  
+    // setLoading(true);
+       
+    
+    // await new Promise(resolve => setTimeout(resolve, 1000));
+    //alert(loading);
+    
     const response =axios.post('https://'+process.env.REACT_APP_SERVER_URL+'/user/',data).then(res=>{console.log(res);setCount(0);navigate('/signin')}).catch(error=> {console.log(error.detail);setCount(2);seterror('Credentials are already used')});
   
 
@@ -96,13 +109,18 @@ const CheckErrorMsg =()=>{
           <button type="reset" className="button button-flat">
             Reset
           </button>
-       <button type="submit" className="button">
+          <button type="submit" className="button">
             Sign up {nextpage && <Link to="MainPage"/>}
           </button>
+        
           {/* <Link to="MainPage"><button type="submit" className="button">
             Sign up
           </button></Link> */}
         </p>
+        {/* {loading&&<div className="spinner">
+        <TraceSpinner size={40} frontColor="green"
+                        backColor="white" />
+                </div>} */}
         <hr/>
         <h6 className='text-center'>Have already an account? <span><Link to="/signin">Login</Link> </span></h6>
         <p></p>
