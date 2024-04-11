@@ -77,8 +77,14 @@ const Widthdraw = (props) => {
          <h2 className="text-xl font-bold mb-4">Withdraw Money</h2>
          <div className="mb-4">
            <label htmlFor="amount" className="block text-gray-700 text-sm font-bold mb-2">Amount</label>
-           <input type="number" id="amount" name="amount" placeholder="Enter Amount" className="shadow appearance-none border rounded lg:w-64 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onKeyUp={CheckErrorMsg} />
-         </div>
+           <input
+  type="number"
+  id="amount"
+  name="amount"
+  placeholder="Enter Amount"
+  className="shadow appearance-none border rounded w-full lg:w-64 sm:w-30 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+  onKeyUp={CheckErrorMsg}
+/>         </div>
          {/* <div className="text-red-500 text-moto p-1">{count===1 && <p className='text-red-500 font-moto'>{error}</p>}</div> */}
          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Withdraw</button>
        </div>

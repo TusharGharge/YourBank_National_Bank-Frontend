@@ -80,7 +80,6 @@ const Createbankaccount = (props) => {
 
   return (
     <div>
-      {loading && <Circles type="TailSpin" color="#00BFFF" height={80} width={80} />}
     <form onSubmit={onhandlesubmit}>
    <div className="flex justify-center items-center mt-10">
 <div className="w-full lg:w-4/5 bg-white shadow-lg rounded-lg overflow-hidden lg:h-96">
