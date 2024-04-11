@@ -4,8 +4,8 @@ import { useState,useRef } from "react";
 import isValidPanCardNo from './utils';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
-import Loader from 'react-loader-spinner';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'; // Import loader styles
+import {Circles} from 'react-loader-spinner';
+ // Import loader styles
 
 
 
@@ -80,7 +80,7 @@ const Createbankaccount = (props) => {
 
   return (
     <div>
-      {loading && <Loader type="TailSpin" color="#00BFFF" height={80} width={80} />}
+      {loading && <Circles type="TailSpin" color="#00BFFF" height={80} width={80} />}
     <form onSubmit={onhandlesubmit}>
    <div className="flex justify-center items-center mt-10">
 <div className="w-full lg:w-4/5 bg-white shadow-lg rounded-lg overflow-hidden lg:h-96">
